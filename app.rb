@@ -24,3 +24,15 @@ post '/putFile' do
     return { message: error.to_s, status: "error", trace: error.backtrace }.to_json
   end
 end
+
+post '/helloWorld' do
+  content_type :json
+  return { message: "Hello World", status: "ok" }.to_json
+end
+
+post '/addition' do
+  content_type :json
+  number1 = params[:number1].to_f rescue 0
+  number2 = params[:number2].to_f rescue 0
+  return { result: (number2 + number1), status: "ok" }.to_json
+end
