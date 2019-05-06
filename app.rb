@@ -36,3 +36,8 @@ post '/addition' do
   number2 = params[:number2].to_f rescue 0
   return { result: (number2 + number1), status: "ok" }.to_json
 end
+
+get '/' do
+  content_type :json
+  return { response: "I´m exists", status: "ok" }.to_json
+end
