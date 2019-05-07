@@ -41,3 +41,9 @@ get '/' do
   content_type :json
   return { response: "I´m exists", status: "ok" }.to_json
 end
+
+post '/printFileName' do
+  content_type :json
+  fileName = params[:name] rescue "empty"
+  return { response: fileName, status: "ok" }.to_json
+end
